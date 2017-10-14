@@ -24,6 +24,14 @@ sudo systemctl start mongod
 # Enable mongod service auto restart
 sudo systemctl enable mongod
 
+# Install Fail2Ban: ban IP that login failure
+# Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
+sudo apt-get install -y fail2ban
+# Install Email: support send email to admin
+sudo apt-get install -y sendmail
+ufw allow ssh
+ufw enable -y
+
 # Install Bower
 sudo npm install -g bower
 
