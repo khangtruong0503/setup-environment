@@ -11,8 +11,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt-get install -y fail2ban
 # Install Email: support send email to admin
 sudo apt-get install -y sendmail
-ufw allow ssh
-ufw enable -y
+sudo ufw allow ssh
+sudo ufw enable -y
 
 # Install nginx and git
 sudo apt install -y nginx git
