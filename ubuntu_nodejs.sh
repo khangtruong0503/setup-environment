@@ -32,4 +32,12 @@ sudo apt-get install -y sendmail
 ufw allow ssh
 ufw enable -y
 
+# Install Bower
+sudo npm install -g bower
+
+# Install PM2 to manage Node JS Application (keep the app is running when close terminal on server,...)
+# Run app with command: pm2 start your-server-file.js
+# or: pm2 start npm -- start
+sudo npm install pm2 -g
+
 echo "Ubuntu system initialization complete!"
