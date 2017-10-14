@@ -6,6 +6,14 @@
 # Update server to latest packages
 sudo apt update && sudo apt upgrade -y
 
+# Install Fail2Ban: ban IP that login failure
+# Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
+sudo apt-get install -y fail2ban
+# Install Email: support send email to admin
+sudo apt-get install -y sendmail
+ufw allow ssh
+ufw enable -y
+
 # Install nginx and git
 sudo apt install -y nginx git
 
@@ -23,14 +31,6 @@ sudo apt update && sudo apt install -y mongodb-org
 sudo systemctl start mongod
 # Enable mongod service auto restart
 sudo systemctl enable mongod
-
-# Install Fail2Ban: ban IP that login failure
-# Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
-sudo apt-get install -y fail2ban
-# Install Email: support send email to admin
-sudo apt-get install -y sendmail
-ufw allow ssh
-ufw enable -y
 
 # Install Bower
 sudo npm install -g bower
