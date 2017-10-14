@@ -11,11 +11,36 @@ sudo apt update && sudo apt upgrade -y
 sudo apt-get install -y fail2ban
 # Install Email: support send email to admin
 sudo apt-get install -y sendmail
-sudo ufw allow ssh
-sudo ufw enable -y
+
+# Enable firewall
+# Reference: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
+# sudo ufw allow proto tcp from any to any port 80,443
+# sudo ufw allow ssh
+# sudo ufw enable -y
 
 # Install nginx and git
 sudo apt install -y nginx git
+# configure nginx server
+# sudo nano /etc/nginx/conf.d/your_domain.conf
+# paste follow code:
+# server {
+#     listen 80;
+#
+#     server_name your_domain.com;
+
+#     access_log /var/www/your_domain/logs/access.log;
+#     error_log /var/www/your_domain/logs/error.log;
+#
+#     location / {
+#         proxy_pass http://localhost:3000;
+#         proxy_http_version 1.1;
+#         proxy_set_header Upgrade $http_upgrade;
+#         proxy_set_header Connection 'upgrade';
+#         proxy_set_header Host $host;
+#         proxy_cache_bypass $http_upgrade;
+#     }
+# }
+# then restart nginx: sudo service nginx restart
 
 # Install latest NodeJS LTS
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -37,7 +62,7 @@ sudo npm install -g bower
 
 # Install PM2 to manage Node JS Application (keep the app is running when close terminal on server,...)
 # Run app with command: pm2 start your-server-file.js
-# or: pm2 start npm -- start
+# or: pm2 start --name YourAppName npm -- start
 sudo npm install pm2 -g
 
 echo "Ubuntu system initialization complete!"
