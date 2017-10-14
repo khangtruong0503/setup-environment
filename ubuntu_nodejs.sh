@@ -6,6 +6,15 @@
 # Update server to latest packages
 sudo apt update && sudo apt upgrade -y
 
+# Install Fail2Ban: ban IP that login failure
+# Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
+sudo apt-get install -y fail2ban
+# Install Email: support send email to admin
+sudo apt-get install -y sendmail
+# Enable firewall
+sudo ufw allow ssh
+sudo ufw enable -y
+
 # Install nginx and git
 sudo apt install -y nginx git
 
@@ -24,20 +33,9 @@ sudo systemctl start mongod
 # Enable mongod service auto restart
 sudo systemctl enable mongod
 
-# Install Fail2Ban: ban IP that login failure
-# Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
-sudo apt-get install -y fail2ban
-# Install Email: support send email to admin
-sudo apt-get install -y sendmail
-ufw allow ssh
-ufw enable -y
-
-# Install Bower
-sudo npm install -g bower
-
 # Install PM2 to manage Node JS Application (keep the app is running when close terminal on server,...)
 # Run app with command: pm2 start your-server-file.js
-# or: pm2 start npm -- start
+# or: pm2 start --name YourAppName npm -- start
 sudo npm install pm2 -g
 
 echo "Ubuntu system initialization complete!"
