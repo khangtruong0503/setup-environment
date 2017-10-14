@@ -27,7 +27,7 @@ sudo apt install -y nginx git
 #     listen 80;
 #
 #     server_name your_domain.com;
-
+#
 #     access_log /var/www/your_domain/logs/access.log;
 #     error_log /var/www/your_domain/logs/error.log;
 #
