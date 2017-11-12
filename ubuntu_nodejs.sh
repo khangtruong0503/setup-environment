@@ -43,7 +43,7 @@ sudo apt install -y nginx git
 # then restart nginx: sudo service nginx restart
 
 # Install latest NodeJS LTS
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # Install MongoDB
@@ -61,5 +61,8 @@ sudo systemctl enable mongod
 # Run app with command: pm2 start your-server-file.js
 # or: pm2 start --name YourAppName npm -- start
 sudo npm install pm2 -g
+
+# install bower: frontend libaries manager
+sudo npm install -g bower
 
 echo "Ubuntu system initialization complete!"
