@@ -3,14 +3,21 @@
 
 # NOTE: The commands here only applicable for Ubuntu 16.04 Xenial, do not use it for other distros
 
+# set timezone in Ho Chi Minh, Vietnam GMT+7
+sudo timedatectl set-timezone UTC
+sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+
 # Update server to latest packages
 sudo apt update && sudo apt upgrade -y
+
+# monitor and task manager tool
+sudo apt-get install htop
 
 # Install Fail2Ban: ban IP that login failure
 # Reference: https://www.linode.com/docs/security/using-fail2ban-for-security
 sudo apt-get install -y fail2ban
 # Install Email: support send email to admin
-sudo apt-get install -y sendmail
+# sudo apt-get install -y sendmail
 
 # Enable firewall
 # Reference: https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
@@ -53,9 +60,9 @@ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb
 sudo apt update && sudo apt install -y mongodb-org
 
 # Start mongod service
-sudo systemctl start mongod
+# sudo systemctl start mongod
 # Enable mongod service auto restart
-sudo systemctl enable mongod
+# sudo systemctl enable mongod
 
 # Install PM2 to manage Node JS Application (keep the app is running when close terminal on server,...)
 # Run app with command: pm2 start your-server-file.js
