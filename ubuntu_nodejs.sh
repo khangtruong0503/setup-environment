@@ -72,7 +72,7 @@ sudo npm install pm2 -g
 # install bower: frontend libaries manager
 sudo npm install -g bower
 
-install gulp: optimize css, js, images, ...
+# install gulp: optimize css, js, images, ...
 sudo npm install gulp-cli -g
 
 echo "Ubuntu system initialization complete!"
