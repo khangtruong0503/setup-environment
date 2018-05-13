@@ -81,4 +81,7 @@ sudo npm install -g bower
 # install gulp: optimize css, js, images, ...
 sudo npm install gulp-cli -g
 
+# install yarn: packages manager
+sudo npm install yarn -g
+
 echo "Ubuntu system initialization complete!"
