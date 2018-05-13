@@ -7,8 +7,11 @@
 sudo timedatectl set-timezone UTC
 sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 
-# Update server to latest packages
-sudo apt update && sudo apt upgrade -y
+# pdate server to latest packages
+sudo apt update
+
+# upgrade server
+# sudo apt upgrade -y
 
 # install curl
 sudo apt install curl
