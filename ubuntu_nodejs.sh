@@ -8,7 +8,7 @@ sudo timedatectl set-timezone UTC
 sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 
 # pdate server to latest packages
-sudo apt update
+sudo apt update-y
 
 # upgrade server
 # sudo apt upgrade -y
